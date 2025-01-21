@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  credit-risk-assessment:
+    build: .
+    container_name: credit-risk-assessment
+    volumes:
+      - .:/app
+    command: ["pytest", "tests/"]

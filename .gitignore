@@ -1,0 +1,16 @@
+# Byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Environment and dependencies
+.env
+venv/
+*.env
+*.venv
+
+# Data and outputs
+data/outputs/

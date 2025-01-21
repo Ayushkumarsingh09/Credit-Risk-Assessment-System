@@ -1,0 +1,11 @@
+{
+    "numerical_features": ["income", "age", "credit_score", "loan_amount"],
+    "categorical_features": [],
+    "target": "target",
+    "test_size": 0.2,
+    "random_state": 42,
+    "model_params": {
+        "n_estimators": 100,
+        "random_state": 42
+    }
+}

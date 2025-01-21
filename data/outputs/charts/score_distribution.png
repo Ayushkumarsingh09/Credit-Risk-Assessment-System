@@ -1,0 +1,25 @@
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestClassifier
+
+# Load data and train model
+data = pd.read_csv("../data/inputs/raw_data.csv")
+X = data.drop(columns=["target"])
+y = data["target"]
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X, y)
+
+# Predict risk scores
+scores = model.predict_proba(X)[:, 1]
+
+# Plot risk score distribution
+plt.figure(figsize=(8, 6))
+sns.histplot(scores, kde=True, bins=20, color="blue")
+plt.title("Credit Risk Score Distribution")
+plt.xlabel("Risk Score")
+plt.ylabel("Frequency")
+plt.tight_layout()
+plt.savefig("../data/outputs/charts/score_distribution.png")
+plt.show()
+
